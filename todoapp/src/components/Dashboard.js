@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Editable from "./Editable";
-import duplicate from "../scripts/duplicate";
+import Card from "./Card";
 
 export default function Dashboard() {
   const [title, setTitle] = useState("untitled dashboard");
@@ -15,7 +15,8 @@ export default function Dashboard() {
           onChange={(e) => setTitle(e.target.value)}
         />
       </Editable>
-      <button onClick={duplicate}>Dupe</button>
+      <button>Create card</button>
+      <Card />
     </div>
   );
 }
