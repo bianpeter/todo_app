@@ -3,13 +3,20 @@ import "./sass/main.scss";
 import Dashboard from "./components/Dashboard";
 
 function App() {
-  const [input, setInput] = useState([]);
+  const [dashboard, setdashboard] = useState([]);
 
   return (
     <div>
       <Dashboard />
-      {input}
-      <button onClick={() => setInput([<Dashboard />, input])}>
+      {dashboard}
+      <button
+        onClick={() =>
+          setdashboard([
+            ...dashboard,
+            <Dashboard key={dashboard.length} id={dashboard.length} />,
+          ])
+        }
+      >
         Add another dashboard
       </button>
     </div>

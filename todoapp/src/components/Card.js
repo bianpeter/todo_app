@@ -23,6 +23,7 @@ function Card() {
           onChange={(e) => setCardDesc(e.target.value)}
         />
       </Editable>
+      <button>Delete</button>
     </div>
   );
 }

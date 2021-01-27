@@ -16,7 +16,13 @@ export default function Dashboard() {
           onChange={(e) => setTitle(e.target.value)}
         />
       </Editable>
-      <button onClick={() => setCards([<Card />, cards])}>Create card</button>
+      <button
+        onClick={() =>
+          setCards([...cards, <Card key={cards.length} id={cards.length} />])
+        }
+      >
+        Create card
+      </button>
       {cards}
     </div>
   );
