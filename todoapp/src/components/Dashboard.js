@@ -4,6 +4,7 @@ import Card from "./Card";
 
 export default function Dashboard() {
   const [title, setTitle] = useState("untitled dashboard");
+  const [cards, setCards] = useState([]);
 
   return (
     <div className="dashboard">
@@ -15,8 +16,8 @@ export default function Dashboard() {
           onChange={(e) => setTitle(e.target.value)}
         />
       </Editable>
-      <button>Create card</button>
-      <Card />
+      <button onClick={() => setCards([<Card />, cards])}>Create card</button>
+      {cards}
     </div>
   );
 }
