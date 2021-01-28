@@ -1,8 +1,48 @@
-.card {
-  display: inline-block;
-  margin-right: 20px;
-  width: 150px;
-  height: 250px;
-  background-color: #57c5cf;
-  border-radius: 5px;
+.cardContainer {
+  position: absolute;
+  display: flex;
+  top: 10%;
+  margin-top: 3%;
+  left: 13%;
+  .card {
+    position: relative;
+    top: 10%;
+    margin-right: 20px;
+    width: 10vw;
+    height: 20vh;
+    background-color: lightgreen;
+    word-wrap: break-word;
+
+    .cardButton {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      top: 0;
+      right: 0;
+      border: solid 2px red;
+      border-radius: 50% 50%;
+      color: red;
+      font-weight: 500;
+      font-size: large;
+
+      &:hover {
+        background-color: red;
+        color: white;
+      }
+    }
+
+    div {
+      margin-top: 10px;
+      margin-left: 5px;
+    }
+
+    textarea {
+      color: white;
+      background-color: lightblue;
+      width: 75%;
+    }
+    input {
+      width: 75%;
+    }
+  }
 }

@@ -6,19 +6,19 @@ function App() {
   const [dashboard, setdashboard] = useState([]);
 
   return (
-    <div>
+    <div className="main">
+      <h1>TO-DO</h1>
       <Dashboard />
       {dashboard}
-      <button
+      <div className="addContainer">
+      <button className="add"
         onClick={() =>
-          setdashboard([
-            ...dashboard,
-            <Dashboard key={dashboard.length} id={dashboard.length} />,
-          ])
+          setdashboard([...dashboard, <Dashboard key={new Date().getTime()} />])
         }
       >
-        Add another dashboard
+        +
       </button>
+      </div>
     </div>
   );
 }

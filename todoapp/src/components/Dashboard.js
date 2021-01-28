@@ -2,28 +2,38 @@ import React, { useState } from "react";
 import Editable from "./Editable";
 import Card from "./Card";
 
-export default function Dashboard() {
-  const [title, setTitle] = useState("untitled dashboard");
+function Dashboard() {
+  const [title, setTitle] = useState("Untitled dashboard");
   const [cards, setCards] = useState([]);
 
   return (
     <div className="dashboard">
-      <Editable text={title} placeholder="untitled dashboard" type="input">
-        <input
-          type="text"
-          name="title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
-      </Editable>
-      <button
+      <div className="dashContainer"> 
+        <Editable text={title} placeholder="Untitled dashboard" type="input">
+          <input
+          className="dashInput"
+           type="text"
+            name="title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+         />
+        </Editable>
+      </div>
+
+      <button className="create"
         onClick={() =>
-          setCards([...cards, <Card key={cards.length} id={cards.length} />])
+          cards.length < 4
+            ? setCards([...cards, <Card key={new Date().getTime()} />])
+            : alert("Reached max number of cards")
         }
       >
         Create card
       </button>
+      <div className="cardContainer">
       {cards}
+      </div>
     </div>
   );
 }
+
+export default Dashboard;

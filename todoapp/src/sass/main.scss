@@ -3,6 +3,38 @@
   padding: 0;
   margin: 0;
 }
+body {
+  height: 100vh;
+  background: rgb(148, 187, 233);
+  background: linear-gradient(
+    90deg,
+    rgba(148, 187, 233, 1) 0%,
+    rgba(143, 143, 199, 1) 16%,
+    rgba(174, 183, 224, 1) 83%,
+    rgba(148, 187, 233, 1) 100%
+  );
+}
+
+h1 {
+  text-align: center;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.addContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .add {
+    width: 10vw;
+    height: 5vh;
+    border: solid 2px red;
+    color: red;
+    font-weight: 500;
+    font-size: 40px;
+    border-radius: 5%;
+  }
+}
 
 @import "./dashboard.scss";
 @import "./card.scss";
