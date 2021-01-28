@@ -38,10 +38,12 @@ body {
   justify-content: center;
   align-items: center;
   .add-btn {
+    align-self: center;
     width: 2vw;
     height: 2vw;
     background-color: rgba(0, 0, 0, 0.438);
     color: rgb(255, 255, 255);
-    font-size: medium;
+    font-size: 1.5vw;
+    font-weight: 800;
   }
 }
