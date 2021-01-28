@@ -5,6 +5,7 @@ function Card() {
   const [cardTitle, setCardTitle] = useState("Card Name");
   const [cardDesc, setCardDesc] = useState("Write description");
 
+  //Ez nem működik 
   let coll = document.getElementsByClassName("collapsible");
   let i;
   
