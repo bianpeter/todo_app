@@ -1,21 +1,36 @@
 import React, { useState } from "react";
 import Editable from "./Editable";
-import duplicate from "../scripts/duplicate";
+import Card from "./Card";
 
-export default function Dashboard() {
-  const [title, setTitle] = useState("untitled dashboard");
+function Dashboard() {
+  const [title, setTitle] = useState("Untitled Dashboard");
+  const [cards, setCards] = useState([]);
 
   return (
     <div className="dashboard">
-      <Editable text={title} placeholder="untitled dashboard" type="input">
+      <div className="dashboard-name">
+      <Editable text={title} placeholder="Untitled Dashboard" type="input">
         <input
+          className="dash-input"
           type="text"
           name="title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
       </Editable>
-      <button onClick={duplicate}>Dupe</button>
+      </div>
+      <button className="create-card-btn"
+        onClick={() =>
+          cards.length < 6
+            ? setCards([...cards, <Card key={new Date().getTime()} />])
+            : alert("Reached max number of cards")
+        }
+      >
+        Create New Card
+      </button>
+      {cards}
     </div>
   );
 }
+
+export default Dashboard;

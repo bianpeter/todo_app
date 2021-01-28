@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
-const Editable = ({ text, type, placeholder, children, ...props }) => {
+function Editable({ text, type, children }) {
   const [isEditing, setEditing] = useState(false);
 
   const handleKeyDown = (event) => {
     const { key } = event;
-    const keys = ["Escape", "Tab", "Enter"];
+    const keys = ["Escape", "Enter"];
 
     if (keys.indexOf(key) > -1) {
       setEditing(false);
@@ -13,7 +13,7 @@ const Editable = ({ text, type, placeholder, children, ...props }) => {
   };
 
   return (
-    <section {...props}>
+    <div>
       {isEditing ? (
         <div
           onBlur={() => setEditing(false)}
@@ -23,11 +23,11 @@ const Editable = ({ text, type, placeholder, children, ...props }) => {
         </div>
       ) : (
         <div onClick={() => setEditing(true)}>
-          <span>{text || placeholder || "Editable content"}</span>
+          <span>{text}</span>
         </div>
       )}
-    </section>
+    </div>
   );
-};
+}
 
 export default Editable;

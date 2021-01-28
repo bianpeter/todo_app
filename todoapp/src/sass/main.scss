@@ -1,7 +1,39 @@
+@import "./dashboard.scss";
+@import "./card.scss";
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
-@import "./dashboard.scss";
+body {
+  height: 100vh;
+  background: rgb(148, 187, 233);
+  background: linear-gradient(
+    90deg,
+    rgba(148, 187, 233, 1) 0%,
+    rgba(143, 143, 199, 1) 16%,
+    rgba(174, 183, 224, 1) 83%,
+    rgba(148, 187, 233, 1) 100%
+  );
+
+  h1 {
+    padding: 2vw;
+    text-align: center;
+    color: rgb(3, 16, 73);
+  }
+}
+
+.add-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .add-btn {
+    width: 2vw;
+    height: 2vw;
+    background-color: rgba(0, 0, 0, 0.438);
+    color: rgb(255, 255, 255);
+    font-size: medium;
+  }
+}
