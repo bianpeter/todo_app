@@ -11,10 +11,7 @@ function App() {
       {dashboard}
       <button
         onClick={() =>
-          setdashboard([
-            ...dashboard,
-            <Dashboard key={dashboard.length} id={dashboard.length} />,
-          ])
+          setdashboard([...dashboard, <Dashboard key={new Date().getTime()} />])
         }
       >
         Add another dashboard

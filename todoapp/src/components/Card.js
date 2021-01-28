@@ -7,7 +7,7 @@ function Card() {
 
   return (
     <div className="card">
-      <Editable text={cardTitle} placeholder="New Card" type="input">
+      <Editable text={cardTitle} type="input">
         <input
           type="text"
           name="title"
@@ -15,15 +15,15 @@ function Card() {
           onChange={(e) => setCardTitle(e.target.value)}
         />
       </Editable>
-      <Editable text={cardDesc} placeholder="description" type="text">
+      <Editable text={cardDesc} type="textarea">
         <textarea
-          type="text"
+          rows="4"
           name="desc"
           value={cardDesc}
           onChange={(e) => setCardDesc(e.target.value)}
         />
       </Editable>
-      <button>Delete</button>
+      <button onClick={(e) => e.target.parentNode.remove()}>Delete</button>
     </div>
   );
 }

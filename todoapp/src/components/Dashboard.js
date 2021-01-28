@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Editable from "./Editable";
 import Card from "./Card";
 
-export default function Dashboard() {
+function Dashboard() {
   const [title, setTitle] = useState("untitled dashboard");
   const [cards, setCards] = useState([]);
 
@@ -18,7 +18,9 @@ export default function Dashboard() {
       </Editable>
       <button
         onClick={() =>
-          setCards([...cards, <Card key={cards.length} id={cards.length} />])
+          cards.length < 4
+            ? setCards([...cards, <Card key={new Date().getTime()} />])
+            : alert("Reached max number of cards")
         }
       >
         Create card
@@ -27,3 +29,5 @@ export default function Dashboard() {
     </div>
   );
 }
+
+export default Dashboard;
