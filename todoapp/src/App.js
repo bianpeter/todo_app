@@ -7,7 +7,8 @@ function App() {
 
   return (
     <div className="main">
-      <h1>To-Do App</h1>
+      <h1>Todo App</h1>
+      <h2>Team - 7</h2>
       <Dashboard />
       {dashboard}
       <div className="add-container">
