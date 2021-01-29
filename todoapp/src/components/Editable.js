@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Editable({ text, type, children }) {
+function Editable({ text, children }) {
   const [isEditing, setEditing] = useState(false);
 
   const handleKeyDown = (event) => {
@@ -17,7 +17,7 @@ function Editable({ text, type, children }) {
       {isEditing ? (
         <div
           onBlur={() => setEditing(false)}
-          onKeyDown={(e) => handleKeyDown(e, type)}
+          onKeyDown={(e) => handleKeyDown(e)}
         >
           {children}
         </div>

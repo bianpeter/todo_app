@@ -9,17 +9,19 @@ function Dashboard() {
   return (
     <div className="dashboard">
       <div className="dashboard-name">
-      <Editable text={title} placeholder="Untitled Dashboard" type="input">
-        <input
-          className="dash-input"
-          type="text"
-          name="title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
-      </Editable>
+        <Editable text={title}>
+          <input
+            className="dash-input"
+            type="text"
+            name="title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
+        </Editable>
       </div>
-      <button className="create-card-btn"
+      <button
+        className="create-card-btn"
+        // Placeholder solution for testing
         onClick={() =>
           cards.length < 6
             ? setCards([...cards, <Card key={new Date().getTime()} />])
